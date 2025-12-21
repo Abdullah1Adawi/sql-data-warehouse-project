@@ -12,7 +12,7 @@ Parameters:
 	None.
 
 Usage Example:
-	EXEC bronze.proc_load_bronze
+	EXEC bronze.load_bronze
 */
 
 
@@ -76,7 +76,7 @@ BEGIN
 		PRINT '---------'
 
 		PRINT '-------------------------------------'
-		PRINT 'Loading crm Tables'
+		PRINT 'Loading erp Tables'
 		PRINT '-------------------------------------'
 
 		SET @start_time = GETDATE();
