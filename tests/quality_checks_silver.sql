@@ -140,8 +140,34 @@ CASE WHEN UPPER(TRIM(gen)) IN ( 'M','MALE') THEN 'Male'
 END AS gen
 FROM silver.erp_cust_az12
 
---------------------------
+----------------------------------------
 
 -- Data Standardization & Consistency
 SELECT DISTINCT cntry
 FROM silver.erp_loc_a101
+
+---------------------------------------
+
+-- Check for Unwanted Spaces
+SELECT * 
+FROM silver.erp_px_cat_g1v2
+WHERE cat != TRIM(cat) OR subcat != TRIM(subcat) OR maintenance!= TRIM(maintenance)
+
+-- Data Standardization % Consistency
+
+SELECT DISTINCT
+cat
+FROM silver.erp_px_cat_g1v2
+
+
+SELECT DISTINCT
+subcat
+FROM silver.erp_px_cat_g1v2
+
+
+SELECT DISTINCT
+maintenance
+FROM silver.erp_px_cat_g1v2
+
+SELECT * 
+FROM silver.erp_px_cat_g1v2
